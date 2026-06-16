@@ -5,15 +5,17 @@
   // skips the TanStack Start SSR auto-setup.
   "name": "dc-bikaneri-sweets",
   "compatibility_date": "2026-06-16",
+  // Serve on the *.workers.dev URL so the site is live without a custom domain.
+  "workers_dev": true,
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
-  },
-  // Custom domain. The zone "dcbikanerisweets.com" must already be added to
-  // this Cloudflare account (nameservers pointed to Cloudflare) for deploy to
-  // attach these routes.
-  "routes": [
-    { "pattern": "dcbikanerisweets.com", "custom_domain": true },
-    { "pattern": "www.dcbikanerisweets.com", "custom_domain": true }
-  ]
+  }
+  // Custom domain: add `dcbikanerisweets.com` as a zone on this Cloudflare
+  // account first (point its nameservers to Cloudflare). Once it shows
+  // "Active", re-add the routes below and redeploy:
+  //   "routes": [
+  //     { "pattern": "dcbikanerisweets.com", "custom_domain": true },
+  //     { "pattern": "www.dcbikanerisweets.com", "custom_domain": true }
+  //   ]
 }
