@@ -8,5 +8,12 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
-  }
+  },
+  // Custom domain. The zone "dcbikanerisweets.com" must already be added to
+  // this Cloudflare account (nameservers pointed to Cloudflare) for deploy to
+  // attach these routes.
+  "routes": [
+    { "pattern": "dcbikanerisweets.com", "custom_domain": true },
+    { "pattern": "www.dcbikanerisweets.com", "custom_domain": true }
+  ]
 }
