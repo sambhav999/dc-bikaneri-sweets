@@ -1,0 +1,12 @@
+{
+  // Static site deploy on Cloudflare Workers. We build a fully prerendered
+  // site into ./dist (index.html + assets) via `npm run build`, then wrangler
+  // uploads it as static assets. There is no `main` server entry, so wrangler
+  // skips the TanStack Start SSR auto-setup.
+  "name": "dc-bikaneri-sweets",
+  "compatibility_date": "2026-06-16",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
