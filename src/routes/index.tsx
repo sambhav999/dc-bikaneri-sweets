@@ -15,6 +15,7 @@ import pistaImg from "@/assets/sweet-pista.jpg";
 import milkImg from "@/assets/dairy-milk.jpg";
 import paneerImg from "@/assets/dairy-paneer.jpg";
 import dahiImg from "@/assets/dairy-dahi.jpg";
+import desiGheeImg from "@/assets/dairy-desi-ghee.jpg";
 import { Button } from "@/components/ui/button";
 
 const SHOP = {
@@ -40,8 +41,9 @@ const SPECIALS = [
 
 const DAIRY = [
   { name: "Fresh Milk", desc: "Pure, farm-fresh full-cream milk delivered daily", img: milkImg },
-  { name: "Paneer", desc: "Soft, hand-pressed cottage cheese cubes", img: paneerImg },
+  { name: "Paneer", desc: "Premium paneer with a creamy bite and homemade freshness", img: paneerImg },
   { name: "Dahi & Makhan", desc: "Thick set curd & home-churned white butter", img: dahiImg },
+  { name: "Premium Desi Ghee", desc: "Rich, aromatic ghee that brings purity, taste, and tradition to every bite", img: desiGheeImg },
 ];
 
 export const Route = createFileRoute("/")({
@@ -180,7 +182,7 @@ function Index() {
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold">Pure Milk, Paneer, Dahi & Makhan</h2>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Sourced and prepared fresh every morning — the same quality we use in our sweets.</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {DAIRY.map((d) => (
               <div key={d.name} className="rounded-2xl bg-card border border-border overflow-hidden" style={{ boxShadow: "var(--shadow-soft)" }}>
                 <img src={d.img} alt={d.name} loading="lazy" width={1024} height={1024} className="h-52 w-full object-cover" />
