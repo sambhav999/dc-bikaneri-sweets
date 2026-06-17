@@ -82,7 +82,7 @@ function Index() {
             </div>
             <div className="leading-tight">
               <div className="font-bold text-sm sm:text-base">{SHOP.name}</div>
-              <div className="text-[10px] sm:text-xs text-muted-foreground">Since the taste of Bikaner</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground">Sweetness Crafted with Care</div>
             </div>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
