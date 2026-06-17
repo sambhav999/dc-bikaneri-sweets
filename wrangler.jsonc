@@ -10,13 +10,11 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
-  }
-  // Custom domains are DISABLED until `dcbikanerisweets.com` is an ACTIVE zone
-  // on this Cloudflare account (nameservers pointed to Cloudflare). Enabling
-  // them before the zone is active fails the deploy with a `/domains/records`
-  // API error. Once the domain shows "Active", re-add and redeploy:
-  //   "routes": [
-  //     { "pattern": "dcbikanerisweets.com", "custom_domain": true },
-  //     { "pattern": "www.dcbikanerisweets.com", "custom_domain": true }
-  //   ]
+  },
+  // Custom domains. The `dcbikanerisweets.com` zone is Active on this Cloudflare
+  // account, so wrangler attaches these on deploy with automatic SSL.
+  "routes": [
+    { "pattern": "dcbikanerisweets.com", "custom_domain": true },
+    { "pattern": "www.dcbikanerisweets.com", "custom_domain": true }
+  ]
 }
