@@ -10,13 +10,13 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
-  },
-  // Custom domains. NOTE: `dcbikanerisweets.com` must already be added as an
-  // ACTIVE zone on this Cloudflare account (its nameservers pointed to
-  // Cloudflare). If it is not yet active, the deploy will fail on these routes
-  // with a `/domains/records` API error.
-  "routes": [
-    { "pattern": "dcbikanerisweets.com", "custom_domain": true },
-    { "pattern": "www.dcbikanerisweets.com", "custom_domain": true }
-  ]
+  }
+  // Custom domains are DISABLED until `dcbikanerisweets.com` is an ACTIVE zone
+  // on this Cloudflare account (nameservers pointed to Cloudflare). Enabling
+  // them before the zone is active fails the deploy with a `/domains/records`
+  // API error. Once the domain shows "Active", re-add and redeploy:
+  //   "routes": [
+  //     { "pattern": "dcbikanerisweets.com", "custom_domain": true },
+  //     { "pattern": "www.dcbikanerisweets.com", "custom_domain": true }
+  //   ]
 }
