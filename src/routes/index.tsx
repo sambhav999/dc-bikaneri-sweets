@@ -46,14 +46,56 @@ const DAIRY = [
   { name: "Premium Desi Ghee", desc: "Rich, aromatic ghee that brings purity, taste, and tradition to every bite", img: desiGheeImg },
 ];
 
+const SITE_URL = "https://dcbikanerisweets.com";
+
+// schema.org LocalBusiness data — this is what powers Google's rich/local results.
+const LD_JSON = {
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "@id": `${SITE_URL}/#business`,
+  name: "D C Bikaneri Sweets",
+  description: "Authentic Bikaneri sweets, mithai and fresh dairy in Ludhiana with same-day home delivery.",
+  image: `${SITE_URL}/og-cover.jpg`,
+  url: `${SITE_URL}/`,
+  telephone: "+919988101000",
+  email: "surjeetsinghdc71@gmail.com",
+  priceRange: "₹₹",
+  servesCuisine: ["Indian Sweets", "Bikaneri Mithai", "Dairy"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Subhash Nagar, Main Road, near Greenland School",
+    addressLocality: "Ludhiana",
+    addressRegion: "Punjab",
+    postalCode: "141007",
+    addressCountry: "IN",
+  },
+  areaServed: { "@type": "City", name: "Ludhiana" },
+  hasMap: "https://maps.app.goo.gl/91et7bq4Xkb6Y1Uu5",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "07:00",
+      closes: "22:00",
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "D C Bikaneri Sweets — Ludhiana | Home Delivery" },
-      { name: "description", content: "D C Bikaneri Sweets in Ludhiana. Authentic Bikaneri mithai, kaju katli, rasgulla, laddoo & more. Order on WhatsApp with home delivery." },
-      { property: "og:title", content: "D C Bikaneri Sweets — Ludhiana" },
-      { property: "og:description", content: "Authentic Bikaneri sweets in Ludhiana with doorstep home delivery. Call or WhatsApp to order." },
-      { property: "og:image", content: "/og-cover.jpg" },
+      { title: "D C Bikaneri Sweets — Best Sweet Shop in Ludhiana | Home Delivery" },
+      { name: "description", content: "D C Bikaneri Sweets in Ludhiana. Authentic Bikaneri mithai — kaju katli, rasgulla, laddoo, jalebi & fresh dairy. Order on WhatsApp with same-day home delivery." },
+      { property: "og:title", content: "D C Bikaneri Sweets — Best Sweet Shop in Ludhiana" },
+      { property: "og:description", content: "Authentic Bikaneri sweets & fresh dairy in Ludhiana with doorstep home delivery. Call or WhatsApp to order." },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}/og-cover.jpg` },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(LD_JSON),
+      },
     ],
   }),
   component: Index,
